@@ -1,5 +1,5 @@
 set root=C:\ProgramData\Anaconda3
-set directory="C:\Users\Mathew Varghese\Desktop\German chatbot\complete_version"       #set your project directory here
+set directory=german_version                
 call %root%\Scripts\activate.bat %root%
 call %root%\Scripts\activate.bat %root%
 call  conda activate rasa
