@@ -1,0 +1,69 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - affirm
+  - deny
+  - lang_search
+  - lang_reply
+  - lang_song
+  - ask_feedback
+entities:
+  - language
+# slots:
+#   email:
+#     type: unfeaturized
+#     influence_conversation: false
+responses:
+  utter_greet:
+  - text: |
+      Hallo! Womit kann ich Ihnen behilflich sein?
+  - text: |
+      Hallo!
+  - text: |
+      Hallo! Was kann ich für Dich tun?
+  utter_goodbye:
+  - text: |
+      Tschüss
+  - text: |
+      Es war schön, mit Ihnen zu sprechen.
+  - text: |
+      Wir sehen uns wieder!
+  utter_thanks:
+  - text: |
+      Schön, dass ich helfen konnte!
+  - text: |
+      Danke
+  - text: |
+      Freue mich zu helfen :)
+  utter_feedback:
+  - text: |
+      Hey, habe ich bekommen, was du wolltest?
+  - text: |
+      War das die Antwort, nach der Sie gesucht haben?
+  - text: |
+      Habe ich das richtig verstanden?
+  - text: |
+      Was ist Ihr Feedback zu meiner Antwort?
+  - text: |
+      Hast du was du gesucht hast?
+  - text: |
+      Hey, hat es deine Frage beantwortet?
+actions:
+- '...'
+- utter_greet
+- utter_goodbye
+- action_lang_search
+- utter_thanks
+- utter_feedback
+- action_lang_song
+- action_lang_reply
+# - utter_subscribed
+# forms:
+#   newsletter_form:
+#     email:
+#     - type: from_text

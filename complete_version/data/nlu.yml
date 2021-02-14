@@ -1,0 +1,103 @@
+nlu:
+- intent: greet
+  examples: |
+    - Hallo
+    - Hallo Bot
+    - Guten Morgen
+    - Hallo nochmal
+    - Hallo Leute
+    - Good morning
+    - Hallo Herr
+    - Hi Kumpel!
+    - Schöne Grüße
+    - Hallo zusammen
+    - Hallo ist da jemand
+    - Hallo Roboter
+    - Wer bist du?
+    - was bist du?
+    - Was geht
+    - Wie geht's?
+    - Wie geht es dir heute, Bruder?
+
+- intent: goodbye
+  examples: |
+    - Tschüss
+    - Auf Wiedersehen
+    - Bis später
+    - Tschüss Bot
+    - Auf Wiedersehen Freund
+    - Tschüss für heute
+    - bis später
+    - muss gehen
+    - Wir sehen uns
+    - Gute Nacht
+    - Einen schönen Tag noch
+    - Ich bin weg
+    - Bis später Alligator
+    - Wir werden bald sprechen
+    - we'll speak soon
+    - Ende
+    - Fertig
+
+- intent: thanks
+  examples: |
+    - Vielen Dank
+    - Dankeschön
+    - Ich danke dir sehr
+    - Danke Bot
+    - Dank dafür
+    - Prost
+    - Prosit Kumpel
+    - OK danke!
+    - perfekt, danke
+    - Vielen Dank für alles
+    - danke für die Hilfe
+    - Vielen Dank
+    - erstaunlich, danke
+    - Cool, danke
+    - ja dank!
+
+- intent: affirm
+  examples: |
+    - y
+    - Y
+    - Ja
+    - ja sicher
+    - absolut
+    - sicher
+    - ja Ja Ja
+    - bestimmt
+    - ja, tat es
+
+- intent: deny
+  examples: |
+    - Nein
+    - noch nie
+    - Das glaube ich nicht
+    - mag das nicht
+    - auf keinen Fall
+    - nicht wirklich
+    - n
+    - N
+
+- intent: lang_search
+  examples: |
+    - Ich möchte etwas über [Hindi](language) wissen.
+    - Können Sie bitte [spanisch](language) suchen?
+    - Benötigen Sie weitere Informationen für [Urdu](language)
+    - Lookup [gujrati](language)
+    - Müssen über [sindhi](language) wissen
+    - Erzähl mir von [punjabi](language)
+    - Kannst du mir ein paar Informationen über [malayalam](language) geben?
+    - Suche nach [odiya](language)
+    - Erzähl mir von [Arabisch](language)
+    - Gib mir Informationen über [persisch](language)
+    - Erzähl mir Fakten über [Portugiesisch](language)
+    - sag etwas über [Chinesisch](language)
+    - Informationen zu [japanisch](language)
+    - Informieren Sie mich über [Bengali](language)
+    - Wie wäre es mit [Englisch](language)
+    - Suche nach [marathi](language)
+    - Benötigen Sie Informationen für [Türkisch](language)
+    - Kennst du [Kannada](language)?
+    - Sag etwas über [Französisch](language)?
