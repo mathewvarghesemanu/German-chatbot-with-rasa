@@ -1,0 +1,21 @@
+Note- run this code
+python -m spacy download de_core_news_sm
+python -m spacy link de_core_news_sm de
+
+
+
+rasa train
+
+1st
+rasa run actions
+
+2nd
+rasa run -m models --enable-api --cors "*" --debug
+
+3rd
+ngrok http 5005
+
+
+
+
+https://40db76f06f20.ngrok.io/webhooks/slack/webhook
