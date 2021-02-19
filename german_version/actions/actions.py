@@ -186,3 +186,67 @@ class ActionLocationSearch(Action):
 #                 dispatcher.utter_message(text = "Sorry! We don't have records for the language %s" % query_lang)
 
         return []
+
+class ActionAreaSearch(Action):
+
+    def name(self) -> Text:
+        return "action_area_search"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        data_path = os.path.join("data", "cldf-datasets-wals-014143f", "cldf", "languages-by-country.csv")
+        wals_data = pd.read_csv(data_path)
+        # print(wals_data.columns)
+        entities = list(tracker.get_latest_entity_values("language"))
+
+        if len(entities) > 0:
+            query_lang = entities.pop()
+            query_lang=google_translate(query_lang)
+            query_lang = query_lang.lower().strip()
+            # print(query_lang)
+            
+            out_row = wals_data[wals_data["ascii_name"] == query_lang].to_dict("records")
+            if len(out_row) > 0:
+                out_row = out_row[0]
+                out_text = "Language %s is spoken at macroarea : %s\n" % (out_row["ascii_name"], out_row["macroarea"])
+                dispatcher.utter_message(text = out_text)
+                # print(out_text)
+            else:
+                dispatcher.utter_message(text = "Sorry! We don't have records for macroarea of %s " % query_lang)
+        return []
+
+
+
+class ActionLocationSearch(Action):
+
+    def name(self) -> Text:
+        return "action_loc_search"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+
+        data_path = os.path.join("data", "cldf-datasets-wals-014143f", "cldf", "languages.csv")
+        wals_data = pd.read_csv(data_path)
+        entities = list(tracker.get_latest_entity_values("language"))
+
+        if len(entities) > 0:
+            query_lang = entities.pop()
+            query_lang=google_translate(query_lang)
+            query_lang = query_lang.lower().capitalize().strip()
+            # print(query_lang)
+            
+            out_row = wals_data[wals_data["Name"] == query_lang].to_dict("records")
+            
+            if len(out_row) > 0:
+                out_row = out_row[0]
+                out_text = "Language %s is spoken at \n lattitude:  %s\n Longitude: %s\n \n" % (out_row["Name"], out_row["Latitude"], out_row["Longitude"])
+                dispatcher.utter_message(text = out_text)
+            else:
+                dispatcher.utter_message(text = "Sorry! We don't have records for the language %s" % query_lang)
+
+
+        return []

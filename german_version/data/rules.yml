@@ -37,6 +37,11 @@ rules:
    - action: action_loc_search
    - action: utter_feedback
 
+ - rule: search a language macroarea based on user query
+   steps:
+   - intent: area_search
+   - action: action_area_search
+   - action: utter_feedback
 
 
   # - rule: submit form

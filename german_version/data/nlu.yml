@@ -119,3 +119,8 @@ nlu:
     - Suchort von [gujrati](language)
     - Bitte finden Sie den Standort von [tamil](language)
     - Gib mir Details, wo die Leute sprechen [urdu](language)
+
+- intent: area_search
+  examples: |
+    - I want to know where the macroarea of [hindi](language)
+    - macroarea of [hindi](language)

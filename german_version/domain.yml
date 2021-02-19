@@ -13,6 +13,7 @@ intents:
   - lang_song
   - ask_feedback
   - loc_search
+  - area_search
 entities:
   - language
 # slots:
@@ -64,6 +65,7 @@ actions:
 - action_lang_song
 - action_lang_reply
 - action_loc_search
+- action_area_search
 # - utter_subscribed
 # forms:
 #   newsletter_form:
