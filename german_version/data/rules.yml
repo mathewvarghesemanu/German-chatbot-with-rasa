@@ -31,6 +31,11 @@ rules:
    - action: action_lang_reply
 
 
+ - rule: search a language location based on user query
+   steps:
+   - intent: loc_search
+   - action: action_loc_search
+   - action: utter_feedback
 
 
 

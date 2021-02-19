@@ -101,3 +101,13 @@ nlu:
     - Benötigen Sie Informationen für [Türkisch](language)
     - Kennst du [Kannada](language)?
     - Sag etwas über [Französisch](language)?
+
+- intent: loc_search
+  examples: |
+    - I want to know where the people speak [hindi](language)
+    - I want to know the location of [hindi](language)
+    - I want to know the demographic of [hindi](language)
+    - Need location info for [french](language)
+    - Lookup place of [gujrati](language)
+    - Please find location of [tamil](language)
+    - Give me details where people speak [urdu](language)
