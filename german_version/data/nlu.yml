@@ -111,3 +111,11 @@ nlu:
     - Lookup place of [gujrati](language)
     - Please find location of [tamil](language)
     - Give me details where people speak [urdu](language)
+
+    - Ich möchte wissen, wo die Leute sprechen [hindi](language)
+    - Ich möchte den Standort von wissen [hindi](language)
+    - Ich möchte die Bevölkerungszahl von kennen [hindi](language)
+    - Benötigen Sie Standortinformationen für [french](language)
+    - Suchort von [gujrati](language)
+    - Bitte finden Sie den Standort von [tamil](language)
+    - Gib mir Details, wo die Leute sprechen [urdu](language)
