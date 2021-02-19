@@ -16,6 +16,8 @@ import pandas as pd
 import os
 import urllib.request
 import re
+import requests
+import json
 
 def google_translate(word):
 	from google_trans_new import google_translator
@@ -159,7 +161,8 @@ class ActionLocationSearch(Action):
 
         if len(entities) > 0:
             query_lang = entities.pop()
-            query_lang = query_lang.lower().capitalize()
+            query_lang=google_translate(query_lang)
+            query_lang = query_lang.lower().capitalize().strip()
             print(query_lang)
             
             out_row = wals_data[wals_data["Name"] == query_lang].to_dict("records")
@@ -170,5 +173,16 @@ class ActionLocationSearch(Action):
                 dispatcher.utter_message(text = out_text)
             else:
                 dispatcher.utter_message(text = "Sorry! We don't have records for the language %s" % query_lang)
+
+#    if len(out_row) > 0:
+#                 out_row = out_row[0]
+#                 url="http://dev.virtualearth.net/REST/v1/Locations/%s,%s?includeEntityTypes=CountryRegion&includeNeighborhood=1&key=AinrnpwbHCyEb255OkD2yh5-8omfqlscr1b4ByV8-K8Xfy0chjvcLqlnErNqhcUV"% (out_row["Latitude"], out_row["Longitude"])
+#                 data=requests.get(url).content
+#                 data_dump = json.loads(data)
+#                 country_name=data_dump["resourceSets"][0]["resources"][0]["name"]
+#                 out_text = "Language %s is spoken at \n lattitude:  %s\n Longitude: %s\n Country:%s\n \n" % (out_row["Name"], out_row["Latitude"], out_row["Longitude"],country_name)
+#                 dispatcher.utter_message(text = out_text)
+#             else:
+#                 dispatcher.utter_message(text = "Sorry! We don't have records for the language %s" % query_lang)
 
         return []
