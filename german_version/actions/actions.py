@@ -146,33 +146,7 @@ class ActionLanguageSearch(Action):
 #                 dispatcher.utter_message(text = "Es tut uns leid! Wir haben keine Aufzeichnungen für die Sprache %s" % query_lang)
 #
 #         return []
-class ActionLocationSearch(Action):
 
-    def name(self) -> Text:
-        return "action_loc_search"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        data_path = os.path.join("data", "cldf-datasets-wals-014143f", "cldf", "languages.csv")
-        wals_data = pd.read_csv(data_path)
-        entities = list(tracker.get_latest_entity_values("language"))
-
-        if len(entities) > 0:
-            query_lang = entities.pop()
-            query_lang=google_translate(query_lang)
-            query_lang = query_lang.lower().capitalize().strip()
-            print(query_lang)
-            
-            out_row = wals_data[wals_data["Name"] == query_lang].to_dict("records")
-
-            if len(out_row) > 0:
-                out_row = out_row[0]
-                out_text = "Language %s is spoken at \n lattitude:  %s\n Longitude: %s\n \n" % (out_row["Name"], out_row["Latitude"], out_row["Longitude"])
-                dispatcher.utter_message(text = out_text)
-            else:
-                dispatcher.utter_message(text = "Sorry! We don't have records for the language %s" % query_lang)
 
 #    if len(out_row) > 0:
 #                 out_row = out_row[0]
@@ -210,11 +184,13 @@ class ActionAreaSearch(Action):
             out_row = wals_data[wals_data["ascii_name"] == query_lang].to_dict("records")
             if len(out_row) > 0:
                 out_row = out_row[0]
-                out_text = "Language %s is spoken at macroarea : %s\n" % (out_row["ascii_name"], out_row["macroarea"])
+                out_text = "Die Sprache %s wird im Makrobereich gesprochen : %s\n" % (out_row["ascii_name"], out_row["macroarea"])
+                
                 dispatcher.utter_message(text = out_text)
                 # print(out_text)
             else:
-                dispatcher.utter_message(text = "Sorry! We don't have records for macroarea of %s " % query_lang)
+                dispatcher.utter_message(text = "Es tut uns leid! Wir haben keine Aufzeichnungen für Makrobereich von %s " % query_lang)
+
         return []
 
 
@@ -243,10 +219,49 @@ class ActionLocationSearch(Action):
             
             if len(out_row) > 0:
                 out_row = out_row[0]
-                out_text = "Language %s is spoken at \n lattitude:  %s\n Longitude: %s\n \n" % (out_row["Name"], out_row["Latitude"], out_row["Longitude"])
+                out_text = "Die Sprache %s wird mit \n Längengrad:  %s\n Längengrad: %s\n gesprochen \n" % (out_row["Name"], out_row["Latitude"], out_row["Longitude"])
                 dispatcher.utter_message(text = out_text)
             else:
-                dispatcher.utter_message(text = "Sorry! We don't have records for the language %s" % query_lang)
+                dispatcher.utter_message(text = "Es tut uns leid! Wir haben keine Aufzeichnungen für die Sprache` %s " % query_lang)
 
 
         return []
+class ActionLanguageByCountry(Action):
+
+	def name(self) -> Text:
+		return "action_lang_by_country"
+
+	def run(self, dispatcher: CollectingDispatcher,
+	    tracker: Tracker,
+	    domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+		data_path = os.path.join("data", "cldf-datasets-wals-014143f", "cldf", "country_lang.csv")
+		wals_data_lang = pd.read_csv(data_path)
+		entities = list(tracker.get_latest_entity_values("country"))
+		#print("intent found")
+		if len(entities) > 0:
+			query_country = entities.pop()
+			query_country = str(google_translate(query_country))
+			if len(query_country.split()) > 1:
+				query_country = query_country.split()[-1]
+			query_country = query_country.lower().capitalize().strip()
+			#print("entity found")
+			# filtered = wals_data_lang[wals_data_lang["macroarea"] == query_country].to_dict("records")
+			# print("entity found")
+			# out_list = []
+			# for record in filtered:
+			# 	out_list.append(record["ascii_name"])
+			#
+			# if len(out_list) < 5 and len(out_list) > 0:
+			# 	out_str = ", ".join(out_list[:5])
+			out_str = wals_data_lang[wals_data_lang["Country"] == query_country]["Languages"]
+			if len(out_str) > 0:
+				out_str = out_str.values[0]
+
+			if len(out_str) > 0:
+			    dispatcher.utter_message(text = "Einige der in {} gesprochenen Sprachen sind: {}".format(query_country, out_str))
+			else:#Wir entschuldigen uns. Amerika existiert nicht in unserer Datenbank.
+			    dispatcher.utter_message(text = "Wir entschuldigen uns. %s existiert nicht in unserer Datenbank. " % query_country)
+
+		return []
+           

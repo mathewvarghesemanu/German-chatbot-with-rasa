@@ -150,3 +150,35 @@ nlu:
     - Können Sie den Makrobereich des [indonesisch](language) benennen?
     - Schreiben Sie den Makrobereich von [Schwedisch](language) auf
     - Sagen Sie mir den Makrobereich [Schwedisch](language)
+
+
+- intent: country_search
+  examples: |
+    - Welche Sprachen sprechen sie in [Indien](country)?
+    - Welche Sprachen gibt es in [Amerika](country)?
+    - Was sprechen sie in [Srilanka](country)?
+    - Sag mir die Sprachen in [Frankreich](country)
+    - Ich möchte alle Sprachen in [Italien](country) kennenlernen.
+    - Kennen Sie die Sprachen in [Indonesien](country)?
+    - Was spricht [Pakistan](country)?
+    - Benötigen Sie die Sprachen in [China](country)
+    - Benötigen Sie die Sprachen in [Deutschland](country)
+    - Bitte geben Sie mir die Liste der Sprachen in [Spanien](country)
+    - Sprechen Sie mehr über die Sprachen in [Saudi-Arabien](country)
+    - Ich brauche die Sprachen in [Afrika](country)
+    - Listen Sie die Sprachen in [Türkei](country) auf
+    - Welche Sprachen werden in [Amerika](country) gesprochen?
+    - Was sprechen die Leute in [Irland](country)?
+    - Wie kommunizieren Menschen in [Südamerika](country)?
+    - Welche Sprachen können Bürger [Frankreich](country) sprechen?
+    - Können Sie mir sagen, welche Sprache in [Eurasien](country) verwendet wird?
+    - Erzähl mir von den Sprachen in [Indien](country)
+    - Was wird in [Europa](country) gesprochen?
+    - Was wird in [Afrika](country) gesprochen?
+    - Die Leute in [England](country) sprechen welche Sprache?
+    - Was ist die Sprache, die in [Griechenland](country) gesprochen wird?
+    - Was ist die Sprache, die in [Australien](country) gesprochen wird?
+    - Sag mir, welche Sprache in [Kanada](country) gesprochen wird
+    - Was ist die Sprache in [Mexiko](country)?
+    - Geben Sie die Liste der in [China](country) gesprochenen Sprachen an.
+    - Sagen Sie die Liste der in [Finnland](country) gesprochenen Sprachen

@@ -31,6 +31,12 @@ rules:
    - intent: area_search
    - action: action_area_search
    - action: utter_feedback
+  
+ - rule: displays all languages that are spoken in a country
+   steps:
+   - intent: country_search
+   - action: action_lang_by_country
+
 
 
   # - rule: submit form

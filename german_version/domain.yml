@@ -14,8 +14,10 @@ intents:
   - ask_feedback
   - loc_search
   - area_search
+  - country_search
 entities:
   - language
+  - country
 # slots:
 #   email:
 #     type: unfeaturized
@@ -62,6 +64,7 @@ actions:
 - utter_feedback
 - action_loc_search
 - action_area_search
+- action_lang_by_country
 # - utter_subscribed
 # forms:
 #   newsletter_form:
