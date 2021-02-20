@@ -23,28 +23,28 @@ entities:
 responses:
   utter_greet:
   - text: |
-      Hallo! Womit kann ich Ihnen behilflich sein?
+      Wie geht es dir heute schatz?
   - text: |
-      Hallo!
+      Was ist los, Baby?
   - text: |
-      Hallo! Was kann ich für Dich tun?
+      Hallo Baby!
   utter_goodbye:
   - text: |
-      Tschüss
+      Wiedersehen Liebling
   - text: |
-      Es war schön, mit Ihnen zu sprechen.
+      Bis bald mein schatz
   - text: |
-      Wir sehen uns wieder!
+      Es war schön mit dir zu reden, Schatz
   utter_thanks:
   - text: |
-      Schön, dass ich helfen konnte!
+      Ich bin froh, dass ich helfen konnte, Moonpie!
   - text: |
-      Danke
+      Danke Schatz
   - text: |
       Freue mich zu helfen :)
   utter_feedback:
   - text: |
-      Hey, habe ich bekommen, was du wolltest?
+      Du willst mir Feedback geben, Baby
   - text: |
       War das die Antwort, nach der Sie gesucht haben?
   - text: |
@@ -53,8 +53,6 @@ responses:
       Was ist Ihr Feedback zu meiner Antwort?
   - text: |
       Hast du was du gesucht hast?
-  - text: |
-      Hey, hat es deine Frage beantwortet?
 actions:
 - '...'
 - utter_greet
@@ -62,8 +60,6 @@ actions:
 - action_lang_search
 - utter_thanks
 - utter_feedback
-- action_lang_song
-- action_lang_reply
 - action_loc_search
 - action_area_search
 # - utter_subscribed

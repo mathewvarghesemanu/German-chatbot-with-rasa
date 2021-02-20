@@ -111,7 +111,6 @@ nlu:
     - Lookup place of [gujrati](language)
     - Please find location of [tamil](language)
     - Give me details where people speak [urdu](language)
-
     - Ich möchte wissen, wo die Leute sprechen [hindi](language)
     - Ich möchte den Standort von wissen [hindi](language)
     - Ich möchte die Bevölkerungszahl von kennen [hindi](language)
@@ -119,8 +118,35 @@ nlu:
     - Suchort von [gujrati](language)
     - Bitte finden Sie den Standort von [tamil](language)
     - Gib mir Details, wo die Leute sprechen [urdu](language)
+    - wo wird [deutsch](language) gesprochen
+    - An welchem ​​Ort wird [englisch](language) gesprochen?
+    - Wo auf der Welt wird [japanisch](language) gesprochen?
+    - Sag mir, wo [englisch](language) gesprochen wird?
+    - Auf welchem ​​Teil der Erde wird [chinesisch](language) gesprochen?
+    - Wo leben Menschen, die [deutsch](language) sprechen?
+    - An welchem ​​Ort wird [französisch](language) gesprochen?
+    - Menschen, die im Allgemeinen [russisch](language) sprechen, leben wo?
+    - Sag mir Land, in dem [arabisch](language) gesprochen wird?
+    - Wo wird [Türkisch](language) gesprochen?
 
 - intent: area_search
   examples: |
     - I want to know where the macroarea of [hindi](language)
     - macroarea of [hindi](language)
+    - intent: area_search
+    - Ich möchte wissen, wo der Makrobereich von [Hindi](language)?
+    - Sag mir, wo der Makrobereich von [Hindi](language) ist
+    - Informieren Sie mich über das Makrogebiet [Russisch](language)
+    - Können Sie den Makrobereich des [Japanischen](language) benennen?
+    - Was ist der Makrobereich von [Französisch](language)
+    - Der Makrobereich für [Chinesisch](language) ist
+    - Können Sie das Makrogebiet von [Italienisch](language) nennen?
+    - Können Sie den Makrobereich von [Italienisch](language) auflisten?
+    - Listen Sie den Makrobereich [Deutsch](language) auf
+    - Gib mir den Makrobereich [Arabisch](language)
+    - geben Makrobereich von [polnisch](language)
+    - Makrobereich von [schwedisch](language)?
+    - Gib mir den Makrobereich [indonesisch](language)
+    - Können Sie den Makrobereich des [indonesisch](language) benennen?
+    - Schreiben Sie den Makrobereich von [Schwedisch](language) auf
+    - Sagen Sie mir den Makrobereich [Schwedisch](language)
